@@ -27,9 +27,8 @@
     </style>
   </head>
   <body class="mixpanel-platform-body" style="overflow-x:scroll;">
-    <script>var dateSelector = $('<div></div>').appendTo('body').MPDatepicker();</script>
       <div id="eventSelect" style="float: left;"></div>
-      <div id="dateRange" style="float: right;"></div>
+      <div id="dateRange" style="float: right; display: none;"></div>
       
       <div style="clear: both;"></div>
     <script>
@@ -155,11 +154,7 @@
             
              
     
-    dateSelector.on('change', function(e, dates)   {
-          params.from = dates.from;
-          params.to = dates.to;    
-               
-             });
+
 
 
             Promise.all(promises).then(function(promiseArray){
@@ -214,7 +209,7 @@
           };
 
           /* Find the Root Event Count */
-          var rootEventCount = MP.api.funnel(rootEvent, rootEvent, params);
+          var rootEventCount = MP.api.funnel(rootEvent, rootEvent);
 
 
           $.when(rootEventCount).done(function(eventCount){
