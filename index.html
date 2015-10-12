@@ -29,7 +29,7 @@
   <body class="mixpanel-platform-body" style="overflow-x:scroll;">
       <div id="eventSelect" style="float: left;"></div>
       <div id="dateRange" style="float: right;"></div>
-      
+      <script>var dateSelector = $('<div></div>').appendTo('body').MPDatepicker();</script>
       <div style="clear: both;"></div>
     <script>
       MP.api.ready(function() {
@@ -153,7 +153,7 @@
             });
             
              
-    var dateSelector = $('<div></div>').appendTo('body').MPDatepicker();    // Create a date picker
+    
     dateSelector.on('change', function(e, dates)   {
           params.from = dates.from;
           params.to = dates.to;    
