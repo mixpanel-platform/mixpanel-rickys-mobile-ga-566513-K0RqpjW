@@ -5,14 +5,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.mxpnl.com/libs/mixpanel-platform/build/mixpanel-platform.v0.latest.min.css">
     <script src="https://cdn.mxpnl.com/libs/mixpanel-platform/build/mixpanel-platform.v0.latest.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
-    <script>
-      $(document).ready(function() {
-    var dateSelector = $('<div></div>').appendTo('body').MPDatepicker();    // Create a date picker
-    dateSelector.on('change', function(e, dates) {                          // Do something when the dates are changed
-        alert('From: ' + dates.from + '\nTo: ' + dates.to);
-    });
-});
-    </script>
+
     <style>
 
       .node circle {
@@ -158,6 +151,15 @@
                     }
                 }
             });
+            
+             $(document).ready(function() {
+    var dateSelector = $('<div></div>').appendTo('body').MPDatepicker();    // Create a date picker
+    dateSelector.on('change', function(e, dates)   
+          params.from = dates.from;
+          params.to = dates.to;    
+               
+             });
+});
 
             Promise.all(promises).then(function(promiseArray){
               _.each(promiseArray, function(data){
@@ -235,5 +237,7 @@
         });
        });
     </script>
+    
+
   </body>
 </html>
