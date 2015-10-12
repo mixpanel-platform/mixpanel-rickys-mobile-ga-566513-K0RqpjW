@@ -152,14 +152,14 @@
                 }
             });
             
-             $(document).ready(function() {
+             
     var dateSelector = $('<div></div>').appendTo('body').MPDatepicker();    // Create a date picker
-    dateSelector.on('change', function(e, dates)   
+    dateSelector.on('change', function(e, dates)   {
           params.from = dates.from;
           params.to = dates.to;    
                
              });
-});
+
 
             Promise.all(promises).then(function(promiseArray){
               _.each(promiseArray, function(data){
