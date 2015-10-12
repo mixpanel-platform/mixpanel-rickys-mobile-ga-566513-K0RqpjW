@@ -214,7 +214,7 @@
           };
 
           /* Find the Root Event Count */
-          var rootEventCount = MP.api.funnel(rootEvent, rootEvent);
+          var rootEventCount = MP.api.funnel(rootEvent, rootEvent, params);
 
 
           $.when(rootEventCount).done(function(eventCount){
