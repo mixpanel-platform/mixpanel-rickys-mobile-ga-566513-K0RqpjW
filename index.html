@@ -27,9 +27,10 @@
     </style>
   </head>
   <body class="mixpanel-platform-body" style="overflow-x:scroll;">
+    <script>var dateSelector = $('<div></div>').appendTo('body').MPDatepicker();</script>
       <div id="eventSelect" style="float: left;"></div>
       <div id="dateRange" style="float: right;"></div>
-      <script>var dateSelector = $('<div></div>').appendTo('body').MPDatepicker();</script>
+      
       <div style="clear: both;"></div>
     <script>
       MP.api.ready(function() {
